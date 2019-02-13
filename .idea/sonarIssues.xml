@@ -3,52 +3,7 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="/a.dummy">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="/fragment.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/pom.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/Main.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/avro/CreateUsers.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/avro/CreateUsersWithCodeGenaration.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/avro/Main.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/avro/UserCreation/CreateUSerWithoutCodeGenaration.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/avro/UserCreation/CreateUsersWithCodeGenaration.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/resources/user.avsc">
           <value>
             <set />
           </value>
