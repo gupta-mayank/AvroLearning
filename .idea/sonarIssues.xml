@@ -8,6 +8,21 @@
             <set />
           </value>
         </entry>
+        <entry key="C:/code2/jarvis_apis/src/main/java/com/ca/jarvis/onboarding/config/Constants.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/avro/Main.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/avro/UserCreation/CreateUsersWithCodeGenaration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
