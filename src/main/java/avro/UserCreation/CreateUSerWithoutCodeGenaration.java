@@ -26,7 +26,7 @@ public class CreateUSerWithoutCodeGenaration {
         return user2;
     }
 
-    public void createUsersWithOutCodeGenaration() throws IOException {
+    public void createUsersWithOutCodeGeneration() throws IOException {
 
         schema = new Schema.Parser().parse(new File("src/main/java/avro/user.avsc"));
         user1 = new GenericData.Record(schema);

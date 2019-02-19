@@ -3,6 +3,7 @@ package avro;
 import avro.UserCreation.CreateUSerWithoutCodeGenaration;
 import avro.UserCreation.CreateUsersWithCodeGenaration;
 import example.avro.User;
+import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.generic.GenericDatumReader;
@@ -22,7 +23,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        try {
+       /* try {
             CreateUsersWithCodeGenaration createUsersWithCodeGeneration = new CreateUsersWithCodeGenaration();
             createUsersWithCodeGeneration.createUsersWithCodeGenaration();
             serializeWithCodeGeneration(createUsersWithCodeGeneration);
@@ -32,14 +33,20 @@ public class Main {
         }
 
 
-        /*try {
-            CreateUSerWithoutCodeGenaration createUsersWithoutCodeGenaration = new CreateUSerWithoutCodeGenaration();
-            createUsersWithoutCodeGenaration.createUsersWithOutCodeGenaration();
-            serializeWithOutCodegenartion(createUsersWithoutCodeGenaration);
-            desearlizeWithoutCodeGeneration(createUsersWithoutCodeGenaration);
+        try {
+            CreateUSerWithoutCodeGenaration createUsersWithoutCodeGeneration = new CreateUSerWithoutCodeGenaration();
+            createUsersWithoutCodeGeneration.createUsersWithOutCodeGeneration();
+            serializeWithoutCodeGeneration(createUsersWithoutCodeGeneration);
+            desearlizeWithoutCodeGeneration(createUsersWithoutCodeGeneration);
         } catch (IOException e) {
             e.printStackTrace();
         }*/
+
+        try {
+            desearlizeWithoutCodeGenerationHDFSDoc();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -82,7 +89,12 @@ public class Main {
 
     }
 
-    static void serializeWithOutCodegenartion (CreateUSerWithoutCodeGenaration createUsers) throws IOException {
+    /**
+     * Serialize the inputs
+     * @param createUsers
+     * @throws IOException
+     */
+    static void serializeWithoutCodeGeneration (CreateUSerWithoutCodeGenaration createUsers) throws IOException {
 
         File file = new File("users_nocodegeneration.avro");
         DatumWriter<GenericRecord> datumWriter = new GenericDatumWriter<GenericRecord>(createUsers.getSchema());
@@ -102,6 +114,19 @@ public class Main {
         while (dataFileReader.hasNext()) {
             user = dataFileReader.next(user);
             System.out.println(user);
+
+        }
+    }
+
+    static void desearlizeWithoutCodeGenerationHDFSDoc() throws IOException {
+        // Deserialize users from disk
+        Schema schemaHDFS = new Schema.Parser().parse(new File("src/main/java/avro/HDFS2.avsc"));
+        DatumReader<GenericRecord> datumReader = new GenericDatumReader<GenericRecord>(schemaHDFS);
+        DataFileReader<GenericRecord> dataFileReader = new DataFileReader<GenericRecord>(new File("HDFS.avro"), datumReader);
+        GenericRecord hdfsData = null;
+        while (dataFileReader.hasNext()) {
+            hdfsData = dataFileReader.next(hdfsData);
+            System.out.println(hdfsData);
 
         }
     }
