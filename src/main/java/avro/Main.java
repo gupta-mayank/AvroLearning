@@ -26,7 +26,7 @@ public class Main {
        /* try {
             CreateUsersWithCodeGenaration createUsersWithCodeGeneration = new CreateUsersWithCodeGenaration();
             createUsersWithCodeGeneration.createUsersWithCodeGenaration();
-            serializeWithCodeGeneration(createUsersWithCodeGeneration);
+            //serializeWithCodeGeneration(createUsersWithCodeGeneration);
             deserializeWithCodeGeneration();
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,7 +120,7 @@ public class Main {
 
     static void desearlizeWithoutCodeGenerationHDFSDoc() throws IOException {
         // Deserialize users from disk
-        Schema schemaHDFS = new Schema.Parser().parse(new File("src/main/java/avro/HDFS2.avsc"));
+        Schema schemaHDFS = new Schema.Parser().parse(new File("src/main/java/avro/HDFS.avsc"));
         DatumReader<GenericRecord> datumReader = new GenericDatumReader<GenericRecord>(schemaHDFS);
         DataFileReader<GenericRecord> dataFileReader = new DataFileReader<GenericRecord>(new File("HDFS.avro"), datumReader);
         GenericRecord hdfsData = null;

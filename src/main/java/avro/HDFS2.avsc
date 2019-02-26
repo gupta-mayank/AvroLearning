@@ -1,73 +1,89 @@
 {
 	"type": "record",
-	"name": "CAA_DT_mayank_prod1_mayank_doc3_only_hdfs_1_0",
+	"name": "CAA_DT_product1_product1_tenant1_doctype1_1_0",
 	"namespace": "com.ca.jarvis",
-	"fields": [{
-		"name": "header",
-		"type": {
-			"type": "record",
+	"fields": [
+		{
 			"name": "header",
-			"fields": [{
-				"name": "tenant_id",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "doc_type_id",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "unique_id",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "external_version",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "parent_id",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "doc_type_version",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "product_id",
-				"type": ["null",
-				"string"],
-				"default": null
-			}]
-		}
-	},
-	{
-		"name": "body",
-		"type": {
-			"type": "record",
+			"type": {
+				"type": "record",
+				"name": "header",
+				"fields": [
+					{
+						"name": "tenant_id",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "doc_type_id",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "unique_id",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "external_version",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "parent_id",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "doc_type_version",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "product_id",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					}
+				]
+			}
+		},
+		{
 			"name": "body",
-			"fields": [{
-				"name": "firstname",
-				"type": ["null",
-				"string"],
-				"default": null
-			},
-			{
-				"name": "lastname",
-				"type": ["null",
-				"string"],
-				"default": null
-			}]
+			"type": {
+				"type": "record",
+				"name": "body",
+				"fields": [
+					{
+						"name": "firstname",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					}
+				]
+			}
 		}
-	}]
+	]
 }
